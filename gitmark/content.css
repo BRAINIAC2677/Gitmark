@@ -1,0 +1,45 @@
+* {
+  --primary-color: #3c3f3f;
+  --seccondary-color: #999794;
+}
+
+.gitmark-btn {
+  background-color: #ddbfbf;
+  color: black;
+}
+
+.popup-btn {
+}
+
+.gitmark-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 20%;
+  z-index: 100;
+  overflow: scroll;
+  background-color: var(--primary-color);
+}
+
+.hide {
+  display: none;
+}
+
+.gitmark-heading {
+  background-color: var(--seccondary-color);
+  font-size: large;
+  font-weight: 700;
+  font-style: italic;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.gitmark-list {
+}
+
+.gitmark-item {
+}
