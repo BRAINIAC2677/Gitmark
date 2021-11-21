@@ -3,40 +3,66 @@
   --secondary-color: #999794;
   --accent-color-1: #fffefb;
   --text-color: rgb(248, 242, 242);
+  --gitmark-view-width: 300px;
+  --gitmark-view-transition: all 0.7s ease;
+  --popup-btn-offset: -20px;
 }
 
 .gitmark-btn {
-  background-color: #ddbfbf;
+  background-color: var(--primary-color);
+  border: solid 1px var(--accent-color-1);
   color: black;
+  display: block;
+  height: 15px;
+  margin: 5px;
+  transform: rotate(45deg);
+  width: 15px;
+}
+
+.filled {
+  background-color: whitesmoke;
 }
 
 .popup-btn {
+  border-radius: 5%;
+  left: var(--popup-btn-offset);
+  position: fixed;
+  padding: 0.2rem 1rem;
+  top: 100px;
+  transform: rotate(-90deg);
+  transition: var(--gitmark-view-transition);
+  z-index: 100;
+}
+
+.popup-btn-clicked {
+  left: calc(var(--gitmark-view-width) + var(--popup-btn-offset));
 }
 
 .gitmark-view {
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: calc(-1 * var(--gitmark-view-width));
+  overflow-y: scroll;
   position: fixed;
   top: 0;
-  left: 0;
-  bottom: 0;
-  width: 20%;
+  transition: var(--gitmark-view-transition);
+  width: 300px;
   z-index: 100;
-  overflow-y: scroll;
-  background-color: var(--primary-color);
 }
 
-.hide {
-  display: none;
+.show {
+  left: 0;
 }
 
 .gitmark-items {
+  background-color: var(--primary-color);
+  border: solid 1px var(--accent-color-1);
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border: solid 1px var(--accent-color-1);
-  background-color: var(--primary-color);
   height: 10vh;
-  padding-left: 1rem;
-  border-radius: 3px;
+  justify-content: center;
+  padding: 0rem 1rem;
 }
 
 .gitmark-heading {
@@ -46,7 +72,10 @@
   font-style: italic;
 }
 
-.gitmark-item {
+.gitmark-view .gitmark-item {
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .gitmark-item a {
