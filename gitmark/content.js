@@ -30,7 +30,7 @@ function onGitmark() {
 
 //adding popup button to the page
 let popupButton = document.createElement("button");
-popupButton.innerHTML = "Popup";
+popupButton.innerHTML = "Gitmark";
 popupButton.classList.add("popup-btn");
 document.body.appendChild(popupButton);
 
